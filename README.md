@@ -1,6 +1,6 @@
 # Smart Health District Ops
 
-AI-driven health centre and supply chain management platform for PHCs/CHCs.
+AI-driven health centre and supply chain management platform for PHCs/CHCs. in terms of, Track 3 - Smart Health
 
 ## Live Links
 - [Project site](https://sites.google.com/view/smart-health-districtops/home?authuser=1)
