@@ -1,0 +1,49 @@
+## AI Agent
+
+This project uses two purpose-built AI agents, both implemented in `Code.gs` via Google Apps Script, calling an external LLM API for reasoning.
+
+### Agent 1 — Multilingual Stock Parser (`parseRawInput`)
+Takes unstructured, free-text messages in any language (Hindi, Hinglish, Kannada, English) from the `RawInput` sheet and extracts structured fields: centre name, medicine, quantity, urgency, and detected language. The result is written automatically into `StockLogs`.
+
+### Agent 2 — Stock-Risk Analyzer & Redistribution Recommender (`runStockAnalysis`)
+Reads current stock levels across every centre in the district, reasons about which medicines are at risk of running out relative to their threshold, checks whether any other centre has surplus of the same medicine, and writes ranked, actionable recommendations into `Alerts` — not just a warning, but a specific redistribution suggestion.
+
+Both agents share a single `callAI()` function that handles the API request, so the underlying model can be swapped without touching the rest of the codebase.
+
+---
+
+### How to Set This Up Yourself (for judges / reviewers)
+
+You don't need our API key or Sheet access to verify this works — you can wire it up independently in about 10 minutes:
+
+**1. Get your own free API key**
+This project calls an OpenAI-compatible chat completions endpoint. Any compatible provider works (we used Groq's hosted Llama 3.3 70B for speed and a genuinely free tier with no card required — get a key at [console.groq.com](https://console.groq.com)).
+
+**2. Create your own copy of the Sheet**
+- Create a new Google Sheet
+- Add 4 tabs: `Centres`, `StockLogs`, `Alerts`, `RawInput`
+- Column headers for each are listed in `schema.md` in this repo
+
+**3. Add the code**
+- Open **Extensions > Apps Script** from inside your Sheet
+- Paste the contents of `Code.gs` from this repo
+
+**4. Add your API key securely**
+- In the Apps Script editor, click the **gear icon (Project Settings)**
+- Scroll to **Script Properties > Add script property**
+- Key: `AI_API_KEY`, Value: your API key
+- This keeps the key out of the source code entirely — never hardcode it in `Code.gs`
+
+**5. Seed sample data**
+- Add a row to `Centres` (e.g., `C1, PHC Test, PHC, ..., TRUE`)
+- Add a row to `RawInput` with a free-text message like:
+  `Kanakapura PHC mein paracetamol bahut kam hai, sirf 5 bache hain`
+
+**6. Run it**
+- In Apps Script, select `parseRawInput` from the function dropdown, click **Run**
+- Approve the permissions prompt (first run only)
+- Check `StockLogs` — a new AI-parsed row should appear
+- Add a few more stock rows, then run `runStockAnalysis`
+- Check `Alerts` — ranked risk recommendations should appear
+
+That's the entire agent, fully reproducible outside our environment.
