@@ -8,7 +8,8 @@ AI-driven health centre and supply chain management platform for PHCs/CHCs.
 - [Mobile data-entry app (AppSheet)](https://www.appsheet.com/newshortcut/33e691a7-3bb0-4698-b9ca-8099f127b94c)
 
 ## Demo Video
-[![Watch the demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)]https://youtu.be/53WsbikIbPI?feature=shared)
+## Demo Video
+[Watch the full demo walkthrough](https://youtu.be/53WsbikIbPI?feature=shared)
 
 ## Tech Stack
 - Google Sheets — database
