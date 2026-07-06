@@ -17,7 +17,7 @@ Both agents share a single `callAI()` function that handles the API request, so 
 You don't need our API key or Sheet access to verify this works — you can wire it up independently in about 10 minutes:
 
 **1. Get your own free API key**
-This project calls an OpenAI-compatible chat completions endpoint. Any compatible provider works (we used Groq's hosted Llama 3.3 70B for speed and a genuinely free tier with no card required — get a key at [console.groq.com](https://console.groq.com)).
+This project calls an OpenAI-compatible chat completions endpoint. Any compatible provider works.
 
 **2. Create your own copy of the Sheet**
 - Create a new Google Sheet
