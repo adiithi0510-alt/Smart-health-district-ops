@@ -7,6 +7,9 @@ AI-driven health centre and supply chain management platform for PHCs/CHCs.
 - [Live dashboard (Looker Studio)](https://datastudio.google.com/reporting/882a62e6-1432-4e93-ad99-1bca37a37299)
 - [Mobile data-entry app (AppSheet)](https://www.appsheet.com/newshortcut/33e691a7-3bb0-4698-b9ca-8099f127b94c)
 
+## Demo Video
+[![Watch the demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)]https://youtu.be/53WsbikIbPI?feature=shared)
+
 ## Tech Stack
 - Google Sheets — database
 - Google AppSheet — mobile field data-entry app
