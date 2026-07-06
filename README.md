@@ -17,7 +17,11 @@ AI-driven health centre and supply chain management platform for PHCs/CHCs. in t
 - Google Apps Script — automation and AI orchestration (see Code.gs)
 - Looker Studio — live admin dashboard
 - AI agent for multilingual parsing and stock-risk analysis
-- Gemini Nano Banana — logo generation
+- Gemini Nano Banana — logo generation and architecture diagram
+
+ ## Architecture
+
+![Architecture diagram](architecture-diagram.png)
 
 ## How it works
 1. Field staff log stock via mobile app, or send a message in their own language
